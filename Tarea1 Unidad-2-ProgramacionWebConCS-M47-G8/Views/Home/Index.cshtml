@@ -1,0 +1,38 @@
+﻿@model List<Tarea1_Unidad_2_ProgramacionWebConCS_M47_G8.Models.Clientes>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Listado de Clientes</h1>
+</div>
+
+
+<div class="text-center">
+
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in Model)
+            {
+            <tr>
+                <td>@cliente.Codigo</td>                
+                <td><a href="/Home/Detalleclientes/@cliente.Codigo">@cliente.Nombre</a></td>
+                <td>@cliente.Balance</td>
+            </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+<div class="text-center">
+    <p>Obtenga información sobre <a href="https://docs.microsoft.com/aspnet/core">cómo crear aplicaciones web con ASP.NET Core</a>.</p>
+</div> 
